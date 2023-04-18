@@ -17,11 +17,23 @@ class ViewModel {
     func createUser() {
         let user = CreateUserDTO(name: "Rafael", email: "rveronez20@gmail.com", password: "yma2578k", notifications: false)
         
-        loginUseCases.createUser(user: user) { [weak self] user in
+        loginUseCases.createUser(user: user) { user in
             print("Success! \(user)")
-        } onFailure: { [weak self] error in
+        } onFailure: { error in
             print("Failure! \(error)")
         }
 
+    }
+    
+    func getUser() {
+        let email = GetUserDTO(email: "rveronez20@gmail.com")
+        
+        loginUseCases.getUser(email: email) { user in
+            print("Success! \(user)")
+        } onFailure: { error in
+            print("Failure! \(error)")
+        }
+
+        
     }
 }

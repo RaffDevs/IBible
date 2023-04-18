@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A27E31729EDA9EB005B24F1 /* BibliaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27E31629EDA9EB005B24F1 /* BibliaApi.swift */; };
 		6A27E31929EDAAF3005B24F1 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27E31829EDAAF3005B24F1 /* HttpClient.swift */; };
 		6A27E31C29EDB22D005B24F1 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27E31B29EDB22D005B24F1 /* UserEntity.swift */; };
 		6A27E31F29EDB383005B24F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27E31E29EDB383005B24F1 /* User.swift */; };
 		6A27E32129EDB619005B24F1 /* CreateUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27E32029EDB619005B24F1 /* CreateUserDTO.swift */; };
 		6A27E32329EDB7B6005B24F1 /* GetUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27E32229EDB7B6005B24F1 /* GetUserDTO.swift */; };
 		6A27E32529EDE926005B24F1 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27E32429EDE926005B24F1 /* Errors.swift */; };
-		6ACD214129EE07F300B8A0B4 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214029EE07F300B8A0B4 /* DIContainer.swift */; };
+		6A55C9A129EF1D6E0094E696 /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9A029EF1D6E0094E696 /* LoginApi.swift */; };
+		6A55C9A329EF1EA60094E696 /* LoginApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9A229EF1EA60094E696 /* LoginApiImpl.swift */; };
+		6A55C9A929EF24560094E696 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9A829EF24560094E696 /* UserDefault.swift */; };
+		6A55C9AB29EF25600094E696 /* LoginDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9AA29EF25600094E696 /* LoginDefaults.swift */; };
+		6ACD214129EE07F300B8A0B4 /* LoginContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214029EE07F300B8A0B4 /* LoginContainer.swift */; };
 		6ACD214529EE08AA00B8A0B4 /* LoginDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214429EE08AA00B8A0B4 /* LoginDataSourceImpl.swift */; };
 		6ACD214729EE08E100B8A0B4 /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214629EE08E100B8A0B4 /* LoginDataSource.swift */; };
 		6ACD214929EE0C6300B8A0B4 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214829EE0C6300B8A0B4 /* LoginRepository.swift */; };
@@ -35,14 +38,17 @@
 		1A140FB33E4CA7483B92722B /* Pods-IBible.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBible.release.xcconfig"; path = "Target Support Files/Pods-IBible/Pods-IBible.release.xcconfig"; sourceTree = "<group>"; };
 		5112C40AE43C44B25C0350F5 /* Pods-IBible.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBible.debug.xcconfig"; path = "Target Support Files/Pods-IBible/Pods-IBible.debug.xcconfig"; sourceTree = "<group>"; };
 		6A17AD4729E8C1670019C648 /* Guia.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Guia.md; sourceTree = "<group>"; };
-		6A27E31629EDA9EB005B24F1 /* BibliaApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliaApi.swift; sourceTree = "<group>"; };
 		6A27E31829EDAAF3005B24F1 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		6A27E31B29EDB22D005B24F1 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		6A27E31E29EDB383005B24F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6A27E32029EDB619005B24F1 /* CreateUserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserDTO.swift; sourceTree = "<group>"; };
 		6A27E32229EDB7B6005B24F1 /* GetUserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDTO.swift; sourceTree = "<group>"; };
 		6A27E32429EDE926005B24F1 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		6ACD214029EE07F300B8A0B4 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		6A55C9A029EF1D6E0094E696 /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
+		6A55C9A229EF1EA60094E696 /* LoginApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiImpl.swift; sourceTree = "<group>"; };
+		6A55C9A829EF24560094E696 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		6A55C9AA29EF25600094E696 /* LoginDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDefaults.swift; sourceTree = "<group>"; };
+		6ACD214029EE07F300B8A0B4 /* LoginContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContainer.swift; sourceTree = "<group>"; };
 		6ACD214429EE08AA00B8A0B4 /* LoginDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSourceImpl.swift; sourceTree = "<group>"; };
 		6ACD214629EE08E100B8A0B4 /* LoginDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSource.swift; sourceTree = "<group>"; };
 		6ACD214829EE0C6300B8A0B4 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
@@ -84,6 +90,8 @@
 		6A27E30A29EDA3CA005B24F1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				6A55C99F29EF1D550094E696 /* API */,
+				6ACD213F29EE071600B8A0B4 /* DI */,
 				6A27E30D29EDA454005B24F1 /* Data */,
 				6A27E30C29EDA44B005B24F1 /* Domain */,
 				6A27E30E29EDA46C005B24F1 /* Presentation */,
@@ -94,7 +102,6 @@
 		6A27E30B29EDA41C005B24F1 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				6A27E31629EDA9EB005B24F1 /* BibliaApi.swift */,
 				6A27E31829EDAAF3005B24F1 /* HttpClient.swift */,
 				6A27E32429EDE926005B24F1 /* Errors.swift */,
 			);
@@ -124,7 +131,10 @@
 		6A27E30E29EDA46C005B24F1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				6ACD215029EE0FCE00B8A0B4 /* ViewModel.swift */,
+				6A55C9AC29EF275A0094E696 /* Coordinator */,
+				6A55C9AF29EF27820094E696 /* ViewModel */,
+				6A55C9AE29EF27720094E696 /* Controller */,
+				6A55C9AD29EF27640094E696 /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -132,6 +142,8 @@
 		6A27E30F29EDA4BA005B24F1 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				6A55C9A729EF241F0094E696 /* Database */,
+				6A55C9A629EF240A0094E696 /* UserDefaults */,
 				6A27E30B29EDA41C005B24F1 /* Networking */,
 			);
 			path = Infra;
@@ -197,10 +209,71 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
+		6A55C99F29EF1D550094E696 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6A55C9A029EF1D6E0094E696 /* LoginApi.swift */,
+				6A55C9A229EF1EA60094E696 /* LoginApiImpl.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6A55C9A529EF23B40094E696 /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				6A55C9AA29EF25600094E696 /* LoginDefaults.swift */,
+			);
+			path = Defaults;
+			sourceTree = "<group>";
+		};
+		6A55C9A629EF240A0094E696 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				6A55C9A829EF24560094E696 /* UserDefault.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		6A55C9A729EF241F0094E696 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		6A55C9AC29EF275A0094E696 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		6A55C9AD29EF27640094E696 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6A55C9AE29EF27720094E696 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6A55C9AF29EF27820094E696 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6ACD215029EE0FCE00B8A0B4 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6ACD213F29EE071600B8A0B4 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				6ACD214029EE07F300B8A0B4 /* DIContainer.swift */,
+				6ACD214029EE07F300B8A0B4 /* LoginContainer.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -217,6 +290,7 @@
 		6ACD214329EE088600B8A0B4 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				6A55C9A529EF23B40094E696 /* Defaults */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -242,7 +316,6 @@
 		6AE0161929E89F060097A766 /* IBible */ = {
 			isa = PBXGroup;
 			children = (
-				6ACD213F29EE071600B8A0B4 /* DI */,
 				6A27E30F29EDA4BA005B24F1 /* Infra */,
 				6A27E30A29EDA3CA005B24F1 /* Login */,
 				6AE0163129E89FAF0097A766 /* Source */,
@@ -388,18 +461,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A27E31729EDA9EB005B24F1 /* BibliaApi.swift in Sources */,
 				6AE0161F29E89F060097A766 /* ViewController.swift in Sources */,
+				6A55C9AB29EF25600094E696 /* LoginDefaults.swift in Sources */,
 				6AE0161B29E89F060097A766 /* AppDelegate.swift in Sources */,
 				6ACD214F29EE0E2D00B8A0B4 /* LoginUseCasesImpl.swift in Sources */,
 				6ACD214529EE08AA00B8A0B4 /* LoginDataSourceImpl.swift in Sources */,
 				6ACD214729EE08E100B8A0B4 /* LoginDataSource.swift in Sources */,
 				6ACD214929EE0C6300B8A0B4 /* LoginRepository.swift in Sources */,
 				6A27E32329EDB7B6005B24F1 /* GetUserDTO.swift in Sources */,
-				6ACD214129EE07F300B8A0B4 /* DIContainer.swift in Sources */,
+				6ACD214129EE07F300B8A0B4 /* LoginContainer.swift in Sources */,
+				6A55C9A929EF24560094E696 /* UserDefault.swift in Sources */,
 				6AE0162529E89F070097A766 /* IBible.xcdatamodeld in Sources */,
 				6ACD214D29EE0E2100B8A0B4 /* LoginUseCases.swift in Sources */,
 				6ACD215129EE0FCE00B8A0B4 /* ViewModel.swift in Sources */,
+				6A55C9A129EF1D6E0094E696 /* LoginApi.swift in Sources */,
 				6A27E31F29EDB383005B24F1 /* User.swift in Sources */,
 				6A27E31C29EDB22D005B24F1 /* UserEntity.swift in Sources */,
 				6A27E32529EDE926005B24F1 /* Errors.swift in Sources */,
@@ -407,6 +482,7 @@
 				6AE0161D29E89F060097A766 /* SceneDelegate.swift in Sources */,
 				6A27E32129EDB619005B24F1 /* CreateUserDTO.swift in Sources */,
 				6ACD214B29EE0CD900B8A0B4 /* LoginRepositoryImpl.swift in Sources */,
+				6A55C9A329EF1EA60094E696 /* LoginApiImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

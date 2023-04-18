@@ -8,20 +8,18 @@
 import Foundation
 import Swinject
 
-class DIContainer {
-    static let shared = DIContainer()
+class LoginContainer {
+    static let shared = LoginContainer()
     
     let container: Container
     
     private init() {
         container = Container()
         
-        container.register(BibliaApi.self) { _ in
-            return BibliaApi()
-        }
+        container.register(LoginApiProtocol.self) { _ in LoginApiImpl()}
         
         container.register(LoginDataSourceProtocol.self) { r in
-            LoginDataSourceImpl(bibliaAPI: r.resolve(BibliaApi.self)!)
+            LoginDataSourceImpl(loginApi: r.resolve(LoginApiProtocol.self)!)
         }
         
         container.register(LoginRepositoryProtocol.self) { r in

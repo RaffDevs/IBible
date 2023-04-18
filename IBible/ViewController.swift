@@ -11,12 +11,12 @@ import Swinject
 
 class ViewController: UIViewController {
     
-    private let viewmodel: ViewModel = DIContainer.shared.container.resolve(ViewModel.self)!
+    private let viewmodel: ViewModel = LoginContainer.shared.container.resolve(ViewModel.self)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewmodel.createUser()
+        viewmodel.getUser()
         
     }
 

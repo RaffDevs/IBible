@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LoginUseCasesProtocol {
-    func createUser(user: CreateUserDTO, onSuccess: @escaping (UserEntity) -> Void, onFailure: @escaping (Error) -> Void)
+    func createUser(user: CreateUserDTO, onSuccess: @escaping (User) -> Void, onFailure: @escaping (Error) -> Void)
     
-    func getUser(email: GetUserDTO, onSuccess: @escaping (UserEntity) -> Void, onFailure: @escaping (Error) -> Void)
+    func getUser(email: GetUserDTO, onSuccess: @escaping (User) -> Void, onFailure: @escaping (Error) -> Void)
 }

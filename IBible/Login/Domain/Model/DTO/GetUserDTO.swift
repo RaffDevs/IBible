@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct GetUserDTO {
+struct GetUserDTO: Encodable {
     let email: String
 }

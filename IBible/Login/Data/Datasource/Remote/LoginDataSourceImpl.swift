@@ -8,14 +8,14 @@
 import Foundation
 
 class LoginDataSourceImpl: LoginDataSourceProtocol {
-    private var bibliaAPI: BibliaApi
+    private var loginApi: LoginApiProtocol
     
-    init(bibliaAPI: BibliaApi) {
-        self.bibliaAPI = bibliaAPI
+    init(loginApi: LoginApiProtocol) {
+        self.loginApi = loginApi
     }
     
     func createUser(user: CreateUserDTO, completion: @escaping (Result<UserEntity, Error>) -> Void) {
-        bibliaAPI.createUser(user: user) { result in
+        loginApi.createUser(user: user) { result in
             switch(result) {
             case .success(let user):
                 completion(.success(user))
@@ -26,7 +26,7 @@ class LoginDataSourceImpl: LoginDataSourceProtocol {
     }
     
     func getUser(email: GetUserDTO, completion: @escaping (Result<UserEntity, Error>) -> Void) {
-        bibliaAPI.getUser(user: email) { result in
+        loginApi.getUser(email: email) { result in
             switch(result) {
             case .success(let user):
                 completion(.success(user))

@@ -14,10 +14,11 @@ class LoginUseCasesImpl: LoginUseCasesProtocol {
         self.loginRepository = loginRepository
     }
     
-    func createUser(user: CreateUserDTO, onSuccess: @escaping (UserEntity) -> Void, onFailure: @escaping (Error) -> Void) {
+    func createUser(user: CreateUserDTO, onSuccess: @escaping (User) -> Void, onFailure: @escaping (Error) -> Void) {
         loginRepository.createUser(user: user) { result in
             switch (result) {
-            case .success(let user):
+            case .success(let userEntity):
+                let user = User.mapperUserEntityToModel(entity: userEntity)
                 onSuccess(user)
             case .failure(let error):
                 onFailure(error)
@@ -25,10 +26,11 @@ class LoginUseCasesImpl: LoginUseCasesProtocol {
         }
     }
     
-    func getUser(email: GetUserDTO, onSuccess: @escaping (UserEntity) -> Void, onFailure: @escaping (Error) -> Void) {
+    func getUser(email: GetUserDTO, onSuccess: @escaping (User) -> Void, onFailure: @escaping (Error) -> Void) {
         loginRepository.getUser(email: email) { result in
             switch (result) {
-            case .success(let user):
+            case .success(let userEntity):
+                let user = User.mapperUserEntityToModel(entity: userEntity)
                 onSuccess(user)
             case .failure(let error):
                 onFailure(error)

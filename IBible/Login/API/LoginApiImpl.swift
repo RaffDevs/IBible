@@ -1,18 +1,17 @@
 //
-//  BibliaApi.swift
+//  LoginAPIImpl.swift
 //  IBible
 //
-//  Created by Rafael Veronez Dias on 17/04/23.
+//  Created by Rafael Veronez Dias on 18/04/23.
 //
 
 import Foundation
 
-
-class BibliaApi {
-    private let httpClient = HttpClient.shared
+class LoginApiImpl: LoginApiProtocol {
+    private let client: HttpClient = HttpClient.shared
     
     func createUser(user: CreateUserDTO, completion: @escaping (Result<UserEntity, Error>) -> Void) {
-        guard var url = URL(string: httpClient.basePath) else {
+        guard var url = URL(string: client.basePath) else {
             print("URL inválida!")
             return
         }
@@ -31,7 +30,7 @@ class BibliaApi {
         
         print(user)
         
-        let task = httpClient.session.dataTask(with: request) { data, response, error in
+        let task = client.session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 print("Erro ao fazer requisição \(error.localizedDescription)")
@@ -61,21 +60,20 @@ class BibliaApi {
         }
         
         task.resume()
-        
     }
     
-    func getUser(user: GetUserDTO, completion: @escaping (Result<UserEntity, Error>) -> Void) {
-        guard var url = URL(string: httpClient.basePath) else {
+    func getUser(email: GetUserDTO, completion: @escaping (Result<UserEntity, Error>) -> Void) {
+        guard var url = URL(string: client.basePath) else {
             print("URL inválida!")
             return
         }
         url.append(path: "/users")
-        url.append(path: "/\(user.email)")
+        url.append(path: "/\(email.email)")
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        let task = httpClient.session.dataTask(with: request) { data, response, error in
+        let task = client.session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 print("Erro ao fazer requisição \(error.localizedDescription)")
@@ -84,7 +82,8 @@ class BibliaApi {
             
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
-                print("Resposta inválida do servidor")
+                let res = response as!HTTPURLResponse
+                print("Resposta inválida do servidor \(res.statusCode)")
                 return
             }
             
@@ -104,6 +103,4 @@ class BibliaApi {
         
         task.resume()
     }
-    
-    
 }
