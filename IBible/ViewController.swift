@@ -6,12 +6,18 @@
 //
 
 import UIKit
+import Swinject
+
 
 class ViewController: UIViewController {
-
+    
+    private let viewmodel: ViewModel = DIContainer.shared.container.resolve(ViewModel.self)!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        viewmodel.createUser()
+        
     }
 
 

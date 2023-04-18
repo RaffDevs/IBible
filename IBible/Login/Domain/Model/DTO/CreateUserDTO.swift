@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CreateUserDTO {
+struct CreateUserDTO: Encodable {
     let name: String
     let email: String
     let password: String

@@ -14,6 +14,14 @@
 		6A27E32129EDB619005B24F1 /* CreateUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27E32029EDB619005B24F1 /* CreateUserDTO.swift */; };
 		6A27E32329EDB7B6005B24F1 /* GetUserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27E32229EDB7B6005B24F1 /* GetUserDTO.swift */; };
 		6A27E32529EDE926005B24F1 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A27E32429EDE926005B24F1 /* Errors.swift */; };
+		6ACD214129EE07F300B8A0B4 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214029EE07F300B8A0B4 /* DIContainer.swift */; };
+		6ACD214529EE08AA00B8A0B4 /* LoginDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214429EE08AA00B8A0B4 /* LoginDataSourceImpl.swift */; };
+		6ACD214729EE08E100B8A0B4 /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214629EE08E100B8A0B4 /* LoginDataSource.swift */; };
+		6ACD214929EE0C6300B8A0B4 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214829EE0C6300B8A0B4 /* LoginRepository.swift */; };
+		6ACD214B29EE0CD900B8A0B4 /* LoginRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214A29EE0CD900B8A0B4 /* LoginRepositoryImpl.swift */; };
+		6ACD214D29EE0E2100B8A0B4 /* LoginUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214C29EE0E2100B8A0B4 /* LoginUseCases.swift */; };
+		6ACD214F29EE0E2D00B8A0B4 /* LoginUseCasesImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214E29EE0E2D00B8A0B4 /* LoginUseCasesImpl.swift */; };
+		6ACD215129EE0FCE00B8A0B4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD215029EE0FCE00B8A0B4 /* ViewModel.swift */; };
 		6AE0161B29E89F060097A766 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0161A29E89F060097A766 /* AppDelegate.swift */; };
 		6AE0161D29E89F060097A766 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0161C29E89F060097A766 /* SceneDelegate.swift */; };
 		6AE0161F29E89F060097A766 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE0161E29E89F060097A766 /* ViewController.swift */; };
@@ -34,6 +42,14 @@
 		6A27E32029EDB619005B24F1 /* CreateUserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserDTO.swift; sourceTree = "<group>"; };
 		6A27E32229EDB7B6005B24F1 /* GetUserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDTO.swift; sourceTree = "<group>"; };
 		6A27E32429EDE926005B24F1 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		6ACD214029EE07F300B8A0B4 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		6ACD214429EE08AA00B8A0B4 /* LoginDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSourceImpl.swift; sourceTree = "<group>"; };
+		6ACD214629EE08E100B8A0B4 /* LoginDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSource.swift; sourceTree = "<group>"; };
+		6ACD214829EE0C6300B8A0B4 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		6ACD214A29EE0CD900B8A0B4 /* LoginRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryImpl.swift; sourceTree = "<group>"; };
+		6ACD214C29EE0E2100B8A0B4 /* LoginUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCases.swift; sourceTree = "<group>"; };
+		6ACD214E29EE0E2D00B8A0B4 /* LoginUseCasesImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCasesImpl.swift; sourceTree = "<group>"; };
+		6ACD215029EE0FCE00B8A0B4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		6AE0161729E89F060097A766 /* IBible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE0161A29E89F060097A766 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AE0161C29E89F060097A766 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,9 +84,9 @@
 		6A27E30A29EDA3CA005B24F1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				6A27E30E29EDA46C005B24F1 /* Presentation */,
 				6A27E30D29EDA454005B24F1 /* Data */,
 				6A27E30C29EDA44B005B24F1 /* Domain */,
+				6A27E30E29EDA46C005B24F1 /* Presentation */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -98,9 +114,9 @@
 		6A27E30D29EDA454005B24F1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				6A27E31029EDA4F5005B24F1 /* Datasource */,
 				6A27E31A29EDB219005B24F1 /* Entities */,
 				6A27E31129EDA4FE005B24F1 /* Repository */,
-				6A27E31029EDA4F5005B24F1 /* Datasource */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -108,6 +124,7 @@
 		6A27E30E29EDA46C005B24F1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				6ACD215029EE0FCE00B8A0B4 /* ViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -123,6 +140,8 @@
 		6A27E31029EDA4F5005B24F1 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
+				6ACD214329EE088600B8A0B4 /* Local */,
+				6ACD214229EE088000B8A0B4 /* Remote */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -130,6 +149,7 @@
 		6A27E31129EDA4FE005B24F1 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				6ACD214A29EE0CD900B8A0B4 /* LoginRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -146,6 +166,7 @@
 		6A27E31329EDA580005B24F1 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				6ACD214829EE0C6300B8A0B4 /* LoginRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -153,6 +174,8 @@
 		6A27E31429EDA588005B24F1 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				6ACD214C29EE0E2100B8A0B4 /* LoginUseCases.swift */,
+				6ACD214E29EE0E2D00B8A0B4 /* LoginUseCasesImpl.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -172,6 +195,30 @@
 				6A27E32229EDB7B6005B24F1 /* GetUserDTO.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		6ACD213F29EE071600B8A0B4 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				6ACD214029EE07F300B8A0B4 /* DIContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		6ACD214229EE088000B8A0B4 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				6ACD214429EE08AA00B8A0B4 /* LoginDataSourceImpl.swift */,
+				6ACD214629EE08E100B8A0B4 /* LoginDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		6ACD214329EE088600B8A0B4 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		6AE0160E29E89F060097A766 = {
@@ -195,6 +242,7 @@
 		6AE0161929E89F060097A766 /* IBible */ = {
 			isa = PBXGroup;
 			children = (
+				6ACD213F29EE071600B8A0B4 /* DI */,
 				6A27E30F29EDA4BA005B24F1 /* Infra */,
 				6A27E30A29EDA3CA005B24F1 /* Login */,
 				6AE0163129E89FAF0097A766 /* Source */,
@@ -223,7 +271,6 @@
 				5112C40AE43C44B25C0350F5 /* Pods-IBible.debug.xcconfig */,
 				1A140FB33E4CA7483B92722B /* Pods-IBible.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -344,14 +391,22 @@
 				6A27E31729EDA9EB005B24F1 /* BibliaApi.swift in Sources */,
 				6AE0161F29E89F060097A766 /* ViewController.swift in Sources */,
 				6AE0161B29E89F060097A766 /* AppDelegate.swift in Sources */,
+				6ACD214F29EE0E2D00B8A0B4 /* LoginUseCasesImpl.swift in Sources */,
+				6ACD214529EE08AA00B8A0B4 /* LoginDataSourceImpl.swift in Sources */,
+				6ACD214729EE08E100B8A0B4 /* LoginDataSource.swift in Sources */,
+				6ACD214929EE0C6300B8A0B4 /* LoginRepository.swift in Sources */,
 				6A27E32329EDB7B6005B24F1 /* GetUserDTO.swift in Sources */,
+				6ACD214129EE07F300B8A0B4 /* DIContainer.swift in Sources */,
 				6AE0162529E89F070097A766 /* IBible.xcdatamodeld in Sources */,
+				6ACD214D29EE0E2100B8A0B4 /* LoginUseCases.swift in Sources */,
+				6ACD215129EE0FCE00B8A0B4 /* ViewModel.swift in Sources */,
 				6A27E31F29EDB383005B24F1 /* User.swift in Sources */,
 				6A27E31C29EDB22D005B24F1 /* UserEntity.swift in Sources */,
 				6A27E32529EDE926005B24F1 /* Errors.swift in Sources */,
 				6A27E31929EDAAF3005B24F1 /* HttpClient.swift in Sources */,
 				6AE0161D29E89F060097A766 /* SceneDelegate.swift in Sources */,
 				6A27E32129EDB619005B24F1 /* CreateUserDTO.swift in Sources */,
+				6ACD214B29EE0CD900B8A0B4 /* LoginRepositoryImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

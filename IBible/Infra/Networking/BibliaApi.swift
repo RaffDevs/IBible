@@ -16,10 +16,20 @@ class BibliaApi {
             print("URL inválida!")
             return
         }
+        
+        guard let body = try? JSONEncoder().encode(user) else {
+            print("Erro ao fazer parse dos dados!")
+            return
+        }
+        
         url.append(path: "/users")
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        request.httpBody = body
+        
+        
+        print(user)
         
         let task = httpClient.session.dataTask(with: request) { data, response, error in
             if let error = error {
@@ -30,7 +40,9 @@ class BibliaApi {
             
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
-                print("Resposta inválida do servidor")
+                print(#function)
+                let res = response as!HTTPURLResponse
+                print("Resposta inválida do servidor \(res.statusCode)")
                 return
             }
             
