@@ -19,4 +19,22 @@ class LoginDefaults {
         }
     }
     
+    var name: String {
+        get {
+            return defaults.string(forKey: "name") ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "name")
+        }
+    }
+    
+    var email: String {
+        get {
+            return defaults.string(forKey: "email") ?? ""
+        }
+        set {
+            defaults.set(newValue, forKey: "email")
+        }
+    }
+    
 }

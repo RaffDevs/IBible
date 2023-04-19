@@ -17,6 +17,11 @@
 		6A55C9A329EF1EA60094E696 /* LoginApiImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9A229EF1EA60094E696 /* LoginApiImpl.swift */; };
 		6A55C9A929EF24560094E696 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9A829EF24560094E696 /* UserDefault.swift */; };
 		6A55C9AB29EF25600094E696 /* LoginDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9AA29EF25600094E696 /* LoginDefaults.swift */; };
+		6A55C9B229EF287D0094E696 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9B129EF287D0094E696 /* Coordinator.swift */; };
+		6A55C9B529EF29000094E696 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9B429EF29000094E696 /* LoginCoordinator.swift */; };
+		6A55C9B729EF29390094E696 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9B629EF29390094E696 /* LoginViewController.swift */; };
+		6A55C9B929EF2BC90094E696 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9B829EF2BC90094E696 /* LoginView.swift */; };
+		6A55C9BC29EF2C970094E696 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55C9BB29EF2C970094E696 /* UIColor+CustomColors.swift */; };
 		6ACD214129EE07F300B8A0B4 /* LoginContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214029EE07F300B8A0B4 /* LoginContainer.swift */; };
 		6ACD214529EE08AA00B8A0B4 /* LoginDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214429EE08AA00B8A0B4 /* LoginDataSourceImpl.swift */; };
 		6ACD214729EE08E100B8A0B4 /* LoginDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACD214629EE08E100B8A0B4 /* LoginDataSource.swift */; };
@@ -48,6 +53,11 @@
 		6A55C9A229EF1EA60094E696 /* LoginApiImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiImpl.swift; sourceTree = "<group>"; };
 		6A55C9A829EF24560094E696 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		6A55C9AA29EF25600094E696 /* LoginDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDefaults.swift; sourceTree = "<group>"; };
+		6A55C9B129EF287D0094E696 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6A55C9B429EF29000094E696 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		6A55C9B629EF29390094E696 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6A55C9B829EF2BC90094E696 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6A55C9BB29EF2C970094E696 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		6ACD214029EE07F300B8A0B4 /* LoginContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContainer.swift; sourceTree = "<group>"; };
 		6ACD214429EE08AA00B8A0B4 /* LoginDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSourceImpl.swift; sourceTree = "<group>"; };
 		6ACD214629EE08E100B8A0B4 /* LoginDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataSource.swift; sourceTree = "<group>"; };
@@ -244,6 +254,7 @@
 		6A55C9AC29EF275A0094E696 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				6A55C9B429EF29000094E696 /* LoginCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -251,6 +262,7 @@
 		6A55C9AD29EF27640094E696 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6A55C9B829EF2BC90094E696 /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +270,7 @@
 		6A55C9AE29EF27720094E696 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6A55C9B629EF29390094E696 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,6 +281,31 @@
 				6ACD215029EE0FCE00B8A0B4 /* ViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6A55C9B029EF28510094E696 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6A55C9B129EF287D0094E696 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		6A55C9B329EF28B50094E696 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6A55C9BA29EF2C660094E696 /* Extensions */,
+				6A27E30A29EDA3CA005B24F1 /* Login */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6A55C9BA29EF2C660094E696 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6A55C9BB29EF2C970094E696 /* UIColor+CustomColors.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6ACD213F29EE071600B8A0B4 /* DI */ = {
@@ -316,8 +354,9 @@
 		6AE0161929E89F060097A766 /* IBible */ = {
 			isa = PBXGroup;
 			children = (
+				6A55C9B329EF28B50094E696 /* App */,
+				6A55C9B029EF28510094E696 /* Coordinator */,
 				6A27E30F29EDA4BA005B24F1 /* Infra */,
-				6A27E30A29EDA3CA005B24F1 /* Login */,
 				6AE0163129E89FAF0097A766 /* Source */,
 				6AE0161E29E89F060097A766 /* ViewController.swift */,
 				6AE0162829E89F090097A766 /* LaunchScreen.storyboard */,
@@ -467,17 +506,22 @@
 				6ACD214F29EE0E2D00B8A0B4 /* LoginUseCasesImpl.swift in Sources */,
 				6ACD214529EE08AA00B8A0B4 /* LoginDataSourceImpl.swift in Sources */,
 				6ACD214729EE08E100B8A0B4 /* LoginDataSource.swift in Sources */,
+				6A55C9B529EF29000094E696 /* LoginCoordinator.swift in Sources */,
 				6ACD214929EE0C6300B8A0B4 /* LoginRepository.swift in Sources */,
 				6A27E32329EDB7B6005B24F1 /* GetUserDTO.swift in Sources */,
 				6ACD214129EE07F300B8A0B4 /* LoginContainer.swift in Sources */,
+				6A55C9B929EF2BC90094E696 /* LoginView.swift in Sources */,
 				6A55C9A929EF24560094E696 /* UserDefault.swift in Sources */,
 				6AE0162529E89F070097A766 /* IBible.xcdatamodeld in Sources */,
 				6ACD214D29EE0E2100B8A0B4 /* LoginUseCases.swift in Sources */,
+				6A55C9B729EF29390094E696 /* LoginViewController.swift in Sources */,
 				6ACD215129EE0FCE00B8A0B4 /* ViewModel.swift in Sources */,
 				6A55C9A129EF1D6E0094E696 /* LoginApi.swift in Sources */,
 				6A27E31F29EDB383005B24F1 /* User.swift in Sources */,
 				6A27E31C29EDB22D005B24F1 /* UserEntity.swift in Sources */,
 				6A27E32529EDE926005B24F1 /* Errors.swift in Sources */,
+				6A55C9B229EF287D0094E696 /* Coordinator.swift in Sources */,
+				6A55C9BC29EF2C970094E696 /* UIColor+CustomColors.swift in Sources */,
 				6A27E31929EDAAF3005B24F1 /* HttpClient.swift in Sources */,
 				6AE0161D29E89F060097A766 /* SceneDelegate.swift in Sources */,
 				6A27E32129EDB619005B24F1 /* CreateUserDTO.swift in Sources */,
