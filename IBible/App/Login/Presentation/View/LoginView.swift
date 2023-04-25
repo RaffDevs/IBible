@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol LoginViewDelegate: AnyObject {
+    func invalidTextfieldData()
+    
+}
+
 class LoginView: UIView {
+    //MARK: - Properts
+    weak var delegate: LoginViewDelegate?
+    
     // MARK: - Elements
     
     lazy var appLogo: UIImageView = {
@@ -15,12 +23,8 @@ class LoginView: UIView {
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "ibibleLogo")
-        imageView.contentMode = .scaleAspectFill
-        let gradientView = UIView()
-        gradientView.frame = imageView.frame
-        gradientView.backgroundColor = UIColor(red: 0.067, green: 0.071, blue: 0.075, alpha: 0)
-        imageView.addSubview(gradientView)
-                
+        imageView.contentMode = .scaleAspectFit
+        
         return imageView
     }()
     
@@ -31,7 +35,6 @@ class LoginView: UIView {
         textField.placeholder = "Nome"
         textField.borderStyle = .roundedRect
         textField.delegate = self
-        textField.addTarget(self, action: #selector(isTextFieldEmpty), for: .editingChanged)
         
         
         return textField
@@ -44,7 +47,6 @@ class LoginView: UIView {
         textField.placeholder = "Email"
         textField.borderStyle = .roundedRect
         textField.delegate = self
-        textField.addTarget(self, action: #selector(isTextFieldEmpty), for: .editingChanged)
 
         
         return textField
@@ -58,7 +60,6 @@ class LoginView: UIView {
         textField.borderStyle = .roundedRect
         textField.placeholder = "Senha"
         textField.delegate = self
-        textField.addTarget(self, action: #selector(isPasswordValid), for: .editingChanged)
 
         
         return textField
@@ -68,6 +69,8 @@ class LoginView: UIView {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Login", for: .normal)
+        button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+        button.backgroundColor = .
         
         return button
     }()
@@ -86,6 +89,10 @@ class LoginView: UIView {
     
     // MARK: - Setup
     
+    func setupDelegate(delegate: LoginViewDelegate) {
+        self.delegate = delegate
+    }
+    
     private func setupElements() {
         addSubview(appLogo)
         addSubview(nameTextField)
@@ -96,23 +103,26 @@ class LoginView: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogo.topAnchor.constraint(equalTo: topAnchor, constant: -200),
-            appLogo.leadingAnchor.constraint(equalTo: leadingAnchor),
-            appLogo.trailingAnchor.constraint(equalTo: trailingAnchor),
-            appLogo.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 100),
+            appLogo.topAnchor.constraint(equalTo: topAnchor, constant: 100),
+            appLogo.centerXAnchor.constraint(equalTo: centerXAnchor),
+            appLogo.widthAnchor.constraint(equalToConstant: 200),
+            appLogo.heightAnchor.constraint(equalToConstant: 200),
             
             
             nameTextField.topAnchor.constraint(equalTo: appLogo.bottomAnchor, constant: 30),
             nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            nameTextField.heightAnchor.constraint(equalToConstant: 50),
             
             emailTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 15),
             emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
             
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 15),
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
             loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
             loginButton.centerXAnchor.constraint(equalTo: centerXAnchor)
@@ -120,26 +130,53 @@ class LoginView: UIView {
     }
     
     // MARK: - Actions
-    @objc
-    private func isTextFieldEmpty(_ textField: UITextField) -> Bool {
-        return textField.text?.isEmpty ?? true
-    }
     
-    @objc func isPasswordValid(_ textField: UITextField) -> Bool {
-        guard let text = textField.text else {
+    private func validateLoginTextField() -> Bool {
+        guard let name = nameTextField.text,
+              let email = emailTextField.text,
+              let password = passwordTextField.text else {
+            
+            self.delegate?.invalidTextfieldData()
             return false
         }
         
-        if text.count >= 6 {
-            return true
+        if name.isEmpty || email.isEmpty || password.isEmpty {
+            self.delegate?.invalidTextfieldData()
+            return false
         }
         
-        return false
+        if password.count < 6 {
+            self.delegate?.invalidTextfieldData()
+            return false
+        }
+        
+        return true
+    }
+    
+    @objc
+    func loginTapped(_ sender: UIButton) {
+        guard let name = nameTextField.text,
+              let email = emailTextField.text,
+              let password = passwordTextField.text else {
+            self.delegate?.invalidTextfieldData()
+            return
+        }
+        
+        if (validateLoginTextField()) {
+            print("Sucesso! \(name) \(email) \(password)")
+        } else {
+            self.delegate?.invalidTextfieldData()
+        }
+        
+        
     }
 }
 
+// MARK: - Extensions
+
 extension LoginView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(#function)
         switch textField {
         case nameTextField:
             emailTextField.becomeFirstResponder()
