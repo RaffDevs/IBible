@@ -26,10 +26,7 @@ class LoginApiImpl: LoginApiProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = body
-        
-        
-        print(user)
-        
+                
         let task = client.session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
@@ -39,14 +36,14 @@ class LoginApiImpl: LoginApiProtocol {
             
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
-                print(#function)
                 let res = response as!HTTPURLResponse
-                print("Resposta inválida do servidor \(res.statusCode)")
+                completion(.failure(ApiErrors.invalidResponse(message: "Resposta inválida do servidor \(res.statusCode)")))
                 return
             }
-            
+                        
             guard let data = data else {
                 print("Nenhum dado retornado")
+                completion(.failure(ApiErrors.noData(message: "Nenhum dado retornado!")))
                 return
             }
             
@@ -72,7 +69,7 @@ class LoginApiImpl: LoginApiProtocol {
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        
+                
         let task = client.session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
@@ -83,7 +80,8 @@ class LoginApiImpl: LoginApiProtocol {
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 let res = response as!HTTPURLResponse
-                print("Resposta inválida do servidor \(res.statusCode)")
+                print("Resposta inválida do servidor \(res)")
+                print("\(String(describing: request))")
                 return
             }
             

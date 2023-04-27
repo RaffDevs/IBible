@@ -30,8 +30,8 @@ class LoginContainer {
             LoginUseCasesImpl(loginRepository: r.resolve(LoginRepositoryProtocol.self)!)
         }
         
-        container.register(ViewModel.self) { r in
-            ViewModel(loginUseCases: r.resolve(LoginUseCasesProtocol.self)!)
+        container.register(LoginViewModel.self) { r in
+            LoginViewModel(loginUseCases: r.resolve(LoginUseCasesProtocol.self)!)
         }
     }
 }

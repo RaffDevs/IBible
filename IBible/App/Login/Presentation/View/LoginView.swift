@@ -9,6 +9,7 @@ import UIKit
 
 protocol LoginViewDelegate: AnyObject {
     func invalidTextfieldData()
+    func login(name: String, email: String, password: String, notification: Bool)
     
 }
 
@@ -30,11 +31,20 @@ class LoginView: UIView {
     
     lazy var nameTextField: UITextField = {
         let textField = UITextField()
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white
+        ]
+        let attributedPlaceholder = NSAttributedString(string: "Nome", attributes: attributes)
+
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .default
         textField.placeholder = "Nome"
         textField.borderStyle = .roundedRect
         textField.delegate = self
+        textField.textColor = .white
+        textField.backgroundColor = .secondaryBackground()
+        textField.attributedPlaceholder = attributedPlaceholder
+
         
         
         return textField
@@ -42,38 +52,82 @@ class LoginView: UIView {
     
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white
+        ]
+        let attributedPlaceholder = NSAttributedString(string: "Email", attributes: attributes)
+
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.keyboardType = .emailAddress
         textField.placeholder = "Email"
         textField.borderStyle = .roundedRect
+        textField.textColor = .white
         textField.delegate = self
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.backgroundColor = .secondaryBackground()
+        textField.attributedPlaceholder = attributedPlaceholder
 
-        
+
         return textField
     }()
     
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white
+        ]
+        let attributedPlaceholder = NSAttributedString(string: "Senha", attributes: attributes)
+
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
         textField.keyboardType = .default
         textField.borderStyle = .roundedRect
+        textField.textColor = .white
         textField.placeholder = "Senha"
         textField.delegate = self
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.backgroundColor = .secondaryBackground()
+        textField.attributedPlaceholder = attributedPlaceholder
 
-        
+
         return textField
     }()
     
     lazy var loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Login", for: .normal)
+        button.setTitle("Registrar", for: .normal)
         button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
-        button.backgroundColor = .
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .primary()
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 10
         
         return button
     }()
+    
+    lazy var notificationSwitch: UISwitch = {
+        let switchButton = UISwitch()
+        switchButton.translatesAutoresizingMaskIntoConstraints = false
+        switchButton.tintColor = .gray
+        switchButton.onTintColor = .primary()
+        switchButton.addTarget(self, action: #selector(toggleSwitch), for: .valueChanged)
+        return switchButton
+        
+    }()
+    
+    lazy var switchDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Receber novidades no email?"
+        label.textColor = .white
+        
+        return label
+    }()
+    
+    
 
     // MARK: - Initializers
     override init(frame: CGRect) {
@@ -99,11 +153,13 @@ class LoginView: UIView {
         addSubview(emailTextField)
         addSubview(passwordTextField)
         addSubview(loginButton)
+        addSubview(notificationSwitch)
+        addSubview(switchDescriptionLabel)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            appLogo.topAnchor.constraint(equalTo: topAnchor, constant: 100),
+            appLogo.topAnchor.constraint(equalTo: topAnchor, constant: 70),
             appLogo.centerXAnchor.constraint(equalTo: centerXAnchor),
             appLogo.widthAnchor.constraint(equalToConstant: 200),
             appLogo.heightAnchor.constraint(equalToConstant: 200),
@@ -124,8 +180,18 @@ class LoginView: UIView {
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
-            loginButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+            notificationSwitch.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 15),
+            
+            notificationSwitch.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            
+            switchDescriptionLabel.centerYAnchor.constraint(equalTo: notificationSwitch.centerYAnchor),
+            switchDescriptionLabel.leadingAnchor.constraint(equalTo: notificationSwitch.trailingAnchor, constant: 20),
+            
+            loginButton.topAnchor.constraint(equalTo: notificationSwitch.bottomAnchor, constant: 30),
+            loginButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
+            loginButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
+            
         ])
     }
     
@@ -153,6 +219,7 @@ class LoginView: UIView {
         return true
     }
     
+    
     @objc
     func loginTapped(_ sender: UIButton) {
         guard let name = nameTextField.text,
@@ -162,13 +229,19 @@ class LoginView: UIView {
             return
         }
         
+        let notification = notificationSwitch.isOn
+        
         if (validateLoginTextField()) {
-            print("Sucesso! \(name) \(email) \(password)")
+            self.delegate?.login(name: name, email: email, password: password, notification: notification)
         } else {
             self.delegate?.invalidTextfieldData()
         }
         
-        
+    }
+    
+    @objc
+    func toggleSwitch(_ sender: UISwitch) {
+        print(sender.isOn)
     }
 }
 

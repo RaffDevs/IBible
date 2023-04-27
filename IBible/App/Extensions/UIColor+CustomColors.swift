@@ -16,4 +16,8 @@ extension UIColor {
     static func secondaryBackground() -> UIColor {
         return UIColor(named: "SecondaryBackground")!
     }
+    
+    static func primary() -> UIColor {
+        return UIColor(named: "Primary")!
+    }
 }

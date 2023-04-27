@@ -18,7 +18,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ibibleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="rDy-dA-vE4">
                                 <rect key="frame" x="87" y="166" width="240" height="237"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.0036640004250000002" green="0.0044420203189999997" blue="0.0076578333969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="237" id="NQv-rn-OpP"/>
                                     <constraint firstAttribute="width" constant="240" id="rag-e9-cxZ"/>
@@ -51,7 +51,7 @@
     <resources>
         <image name="ibibleLogo" width="800" height="800"/>
         <namedColor name="PrimaryBackground">
-            <color red="0.066666666666666666" green="0.070588235294117646" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.067000001668930054" green="0.071000002324581146" blue="0.075000002980232239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

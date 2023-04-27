@@ -7,19 +7,33 @@
 
 import Foundation
 
-class ViewModel {
+protocol LoginViewModelDelegate: AnyObject {
+    func onCreateUserFailure(message: String)
+}
+
+class LoginViewModel {
+    //MARK: - Properties
     private let loginUseCases: LoginUseCasesProtocol
+    private weak var delegate: LoginViewModelDelegate?
     
+    // MARK: - Initializers
     init(loginUseCases: LoginUseCasesProtocol) {
         self.loginUseCases = loginUseCases
     }
     
-    func createUser() {
-        let user = CreateUserDTO(name: "Rafael", email: "rveronez20@gmail.com", password: "yma2578k", notifications: false)
-        
+    // MARK: - Methods
+    func setupDelegate(delegate: LoginViewModelDelegate) {
+        self.delegate = delegate
+    }
+    
+    func createUser(name: String, email: String, password: String, notification: Bool) {
+        let user = CreateUserDTO(name: name, email: email, password: password, notifications: notification)
+                
         loginUseCases.createUser(user: user) { user in
             print("Success! \(user)")
         } onFailure: { error in
+            print("Erro \(error)")
+            self.delegate?.onCreateUserFailure(message: error.localizedDescription)
             print("Failure! \(error)")
         }
 

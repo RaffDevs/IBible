@@ -11,7 +11,7 @@ import Swinject
 
 class ViewController: UIViewController {
     
-    private let viewmodel: ViewModel = LoginContainer.shared.container.resolve(ViewModel.self)!
+    private let viewmodel: LoginViewModel = LoginContainer.shared.container.resolve(LoginViewModel.self)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
